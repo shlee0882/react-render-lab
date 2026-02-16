@@ -1,6 +1,6 @@
 # React Render Lab
 
-React 렌더링 동작을 재현, 측정, 설명, 수치로 확인하는 실험프로젝트
+React 렌더링 동작을 재현하고 수치로 측정하는 실험 프로젝트
 
 - 렌더 전파(Parent → Child)
 - React.memo 경계
