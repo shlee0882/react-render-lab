@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useState } from "react";
 import { useRenderCount } from "../../instrumentation/useRenderCount";
 import React from "react";
 
@@ -25,20 +25,15 @@ export function ScenarioMemo() {
   const rc = useRenderCount("MemoParent");
   const [n, setN] = useState(0);
   const [toggle, setToggle] = useState(true);
-  const handleClick = useCallback(() => {
-    setN((v) => v + 1);
-  }, []);
 
-  const [toggleClicks, setToggleClicks] = useState(0);
-  const [valueClicks, setValueClicks] = useState(0);
   return (
     <div style={{ display: "grid", gap: 8 }}>
       <h3>React.memo on/off</h3>
       <div>Parent renderCount: {rc}</div>
 
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-      <button onClick={() => { setValueClicks(c=>c+1); setN(v=>v+1); }}>value +1</button>
-      <button onClick={() => { setToggleClicks(c=>c+1); setToggle(v=>!v); }}>rerender parent only</button>
+      <button onClick={() => { setN(v=>v+1); }}>value +1</button>
+      <button onClick={() => { setToggle(v=>!v); }}>rerender parent only</button>
 
       </div>
       <div style={{ fontSize: 12, opacity: 0.75 }}>

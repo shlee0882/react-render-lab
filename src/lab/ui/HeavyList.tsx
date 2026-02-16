@@ -1,4 +1,4 @@
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 import { useRenderCount } from "../../instrumentation/useRenderCount";
 import { useWhyDidYouUpdate } from "../../instrumentation/useWhyDidYouUpdate";
 
